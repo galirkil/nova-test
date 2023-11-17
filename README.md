@@ -69,9 +69,9 @@ python3 manage.py runserver
 Создает Google Drive документ c расширением ".txt" на основе
 переданных имени и содержимого.
 
-**Endpoints**
+**Endpoint**
 
-POST http://127.0.0.1:8000/api/create-gdrive-file/
+POST /api/create-gdrive-file/
 
 Создает Google Drive документ с переданными в теле запроса параметрами.
 
