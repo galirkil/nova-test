@@ -1,4 +1,5 @@
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, parser_classes
+from rest_framework.parsers import FormParser, JSONParser
 from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
 
@@ -6,6 +7,7 @@ from api.gdrive import create_file
 
 
 @api_view(['POST'])
+@parser_classes([JSONParser, FormParser])
 def create_gdrive_file(request):
     """
     Creates new file on Google Drive using given
@@ -22,6 +24,6 @@ def create_gdrive_file(request):
     else:
         create_file(file_name, file_content)
         content = {
-            'message': f'File \'{file_name}.txt\' was created on google drive'
+            'message': f'File \'{file_name}.txt\' was created on Google Drive'
         }
         return Response(content, status=HTTP_201_CREATED)
