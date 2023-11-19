@@ -73,7 +73,7 @@ python3 manage.py runserver
 
 POST /api/create-gdrive-file/
 
-Создает Google Drive документ с переданными в теле запроса параметрами.
+Принимает данные в форматах x-www-form-urlencoded, json и создает Google Drive документ с переданными в теле запроса параметрами.
 
 _Параметры_
 
@@ -93,7 +93,7 @@ _Пример ответа_
 
 ```yaml
 {
-  "message":"File 'some name.txt' was created on google drive"
+  "message":"File 'some name.txt' was created on Google Drive"
 }
 ```
 
